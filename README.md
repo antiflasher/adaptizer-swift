@@ -37,12 +37,15 @@ Adapter supports three ways to refer a particular screen size:
 2. SizeClass + Device type: `wC.phone`, `wR.pad`
 3. SizeClass, regardless of the device type: `wC.all`, `wR.all`
 
+<br>
+
 ## Usage
 
 ### 1. Scaled value from the list of explisit break points
 
 You can give a list of exact values for various screen width and Adapter returns one for the current screen.
 
+<br>
 
 1.1 **Create a `Dictionary` of break points**
 
@@ -56,6 +59,7 @@ Also, you can use `wAny` to set a default value: `[wAny: 50, w414: 100]`.
 
 If you haven't set the default value in your dictionary, well the first dictionary value will be used, which is almost arbitrary value, you know :)
 
+<br>
 
 1.2 **Get a value for particular screen width**
 
@@ -65,21 +69,26 @@ If you gave list of `Int`, `Float`, `Double` of `CGFloat` values, a `CGFloat` va
 
 Comflicts are solved towards more specific instruction. F.x. you set `[w320: 80, wC.phone: 100, wC.all: 120]`. For screen width of 320 points, all three instructions applicable, but `w320`is th only one exact, so it is used, the others are ignored. For screen width of 375 points on an iPhone, second and third instruction are applicable, but `wC.phone` is more specific than `wC.all`, so `wC.phone` is used.
 
+<br>
+<br>
 
 ### 2. Scaled value by using original value and multipliers
 
 You can give a list of multipliers to adjust one provided original value to various screen width.
 
+<br>
 
 2.1 **Create a `Dictionary` of break points**
 
 A dictionary is created the very same way as discribed in `1.1`. The only one difference is that the `values` are not exact values, but multiplies of `Double` type.
 
+<br>
 
 2.2 **Set `scalingRule`**
 
 This dictionary of multipliers is used as a scaling rule. To set the rule, add `.scalingRule()` to the dictionary: `[w320: 0.8, w375: 1.0, w414: 1.2].scalingRule()`
 
+<br>
 
 2.3 **Scale an original value**
 
