@@ -99,3 +99,8 @@ This dictionary of multipliers is used as a scaling rule. To set the rule, add `
 Add `.scaled` to a value of `Int`, `Float`, `Double` of `CGFloat` type: `20.scaled`. As result, value in `CGFloat`is returned.
 
 To keep pixel-perfect, the result is rounded by default. If you don't want the result be rounded, say it be setting the rule: `.scalingRule(rounding: false)`
+
+## Thanks to
+
+<a href="https://evilmartians.com/?utm_source=adapter">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54"></a>
