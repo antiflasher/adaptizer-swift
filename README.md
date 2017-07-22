@@ -3,7 +3,7 @@ Class helping to build flexible, adaptive iOS interfaces with extrimely easy API
 
 <br>
 
-<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_main2%402x.png" title="Adapter">
+<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_main%402x.png" title="Adapter">
 
 Why? Sometimes UI designers need to adjust size or text to a particular screen size, like adaptive design in the web.
 
