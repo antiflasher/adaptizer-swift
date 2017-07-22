@@ -5,7 +5,7 @@ Class helping to build flexible, adaptive iOS interfaces with extremely easy API
 
 <img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_main%402x.png" title="Adapter">
 
-Why? Sometimes UI designers need to adjust size or text to a particular screen size, like the adaptive design on the web.
+Why? Sometimes, UI designers need to adjust size or text to a particular screen size, like the adaptive design on the web.
 
 The big picture of various screen sizes:
 
