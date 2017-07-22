@@ -1,4 +1,4 @@
-# Adapter
+# Adapter.swift
 Class helping to build flexible, adaptive iOS interfaces with extrimely easy API:
 
 <br>
