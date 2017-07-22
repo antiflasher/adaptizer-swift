@@ -100,6 +100,8 @@ Add `.scaled` to a value of `Int`, `Float`, `Double` of `CGFloat` type: `20.scal
 
 To keep pixel-perfect, the result is rounded by default. If you don't want the result be rounded, say it be setting the rule: `.scalingRule(rounding: false)`
 
+<br>
+
 ## Thanks to
 
 <a href="https://evilmartians.com/?utm_source=adapter">
