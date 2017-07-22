@@ -104,5 +104,7 @@ To keep pixel-perfect, the result is rounded by default. If you don't want the r
 
 ## Thanks to
 
+Mikhail Rubanov and Ruslan Shevchuk for consultations and ideas.
+
 <a href="https://evilmartians.com/?utm_source=adapter">
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54"></a>
