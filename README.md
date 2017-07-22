@@ -47,7 +47,7 @@ You can give a list of exact values for various screen width and Adapter returns
 
 <br>
 
-1.1 **Create a `Dictionary` of break points**
+**1.1 Create a `Dictionary` of break points**
 
 Add only screen widths you care about: `[w320: 80, w375: 100, w414: 120]`.
 
@@ -61,7 +61,7 @@ If you haven't set the default value in your dictionary, well the first dictiona
 
 <br>
 
-1.2 **Get a value for particular screen width**
+**1.2 Get a value for particular screen width**
 
 Simply add `.scaled` to a dictionary: `[w320.default: 80, w375: 100, w414: 120].scaled`.
 
@@ -78,19 +78,19 @@ You can give a list of multipliers to adjust one provided original value to vari
 
 <br>
 
-2.1 **Create a `Dictionary` of break points**
+**2.1 Create a `Dictionary` of break points**
 
 A dictionary is created the very same way as discribed in `1.1`. The only one difference is that the `values` are not exact values, but multiplies of `Double` type.
 
 <br>
 
-2.2 **Set `scalingRule`**
+**2.2 Set `scalingRule`**
 
 This dictionary of multipliers is used as a scaling rule. To set the rule, add `.scalingRule()` to the dictionary: `[w320: 0.8, w375: 1.0, w414: 1.2].scalingRule()`
 
 <br>
 
-2.3 **Scale an original value**
+**2.3 Scale an original value**
 
 Add `.scaled` to a value of `Int`, `Float`, `Double` of `CGFloat` type: `20.scaled`. As result, value in `CGFloat`is returned.
 
