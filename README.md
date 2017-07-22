@@ -57,7 +57,7 @@ Use `.default`to set a default value for screen widths you haven't specified: `[
 
 Also, you can use `wAny` to set a default value: `[wAny: 50, w414: 100]`.
 
-If you haven't set the default value in your dictionary, well the first dictionary value will be used, which is almost arbitrary value, you know :)
+If you haven't set the default value in your dictionary, well the first dictionary value is used, which is almost arbitrary value, you know :)
 
 <br>
 
@@ -65,7 +65,7 @@ If you haven't set the default value in your dictionary, well the first dictiona
 
 Simply add `.scaled` to a dictionary: `[w320.default: 80, w375: 100, w414: 120].scaled`.
 
-If you gave list of `Int`, `Float`, `Double` of `CGFloat` values, a `CGFloat` value will be returned – in order to use it directly as font size, constrint constant and other interface tweeking without convertation.
+If you gave list of `Int`, `Float`, `Double` of `CGFloat` values, a `CGFloat` value is returned – in order to use it directly as font size, constrint constant and other interface tweeking without convertation.
 
 Comflicts are solved towards more specific instruction. F.x. you set `[w320: 80, wC.phone: 100, wC.all: 120]`. For screen width of 320 points, all three instructions applicable, but `w320`is th only one exact, so it is used, the others are ignored. For screen width of 375 points on an iPhone, second and third instruction are applicable, but `wC.phone` is more specific than `wC.all`, so `wC.phone` is used.
 
