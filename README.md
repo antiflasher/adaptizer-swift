@@ -47,7 +47,7 @@ Adapter supports three ways to refer a particular screen size:
 
 ### 1. Scaled value from the list of explicit break points
 
-You can give a list of exact values for various screen width and Adapter returns one for the current screen.
+You can give a list of exact values for various screen width, and Adapter returns one for the current screen.
 
 <br>
 
@@ -69,9 +69,9 @@ If you haven't set the default value in your dictionary, well the first dictiona
 
 Simply add `.scaled` to a dictionary: `[w320.default: 80, w375: 100, w414: 120].scaled`.
 
-If you gave a list of `Int`, `Float`, `Double` of `CGFloat` values, a `CGFloat` value is returned – in order to use it directly as font size, constraint constant and other interface tweakings without type conversion. If you gave a list of other value types, the result is of the same type.
+If you gave a list of `Int`, `Float`, `Double` of `CGFloat` values, a `CGFloat` value is returned – for you to use it directly as font size, constraint constant and other interface tweakings without type conversion. If you gave a list of other value types, the result is of the same type.
 
-Conflicts are solved towards more specific instruction. F.x. you set `[w320: 80, wC.phone: 100, wC.all: 120]`. For screen width of 320 points, all three instructions applicable, but `w320` is the only one exact, so it is used, the others are ignored. For screen width of 375 points on an iPhone, second and third instructions are applicable, but `wC.phone` is more specific so it is used.
+Conflicts are solved towards more specific instruction. F.x. you set `[w320: 80, wC.phone: 100, wC.all: 120]`. For screen width of 320 points, all three instructions applicable, but `w320` is the only one exact, so it is used, the others are ignored. For screen width of 375 points on an iPhone, second and third instructions are applicable, but `wC.phone` is more specific instruction, so it is used.
 
 <br>
 <br>
@@ -96,7 +96,7 @@ This dictionary of multipliers is used as a scaling rule. To set the rule, add `
 
 **2.3 Scale an original value**
 
-Add `.scaled` to a value of `Int`, `Float`, `Double` of `CGFloat` type: `20.scaled`. As result, a value in `CGFloat`is returned.
+Add `.scaled` to a value of `Int`, `Float`, `Double` of `CGFloat` type: `20.scaled`. As the result, a value in `CGFloat`is returned.
 
 To keep pixel-perfect, the result is rounded by default. If you don't want the result to be rounded, say it be setting the rule: `.scalingRule(rounding: false)`
 
