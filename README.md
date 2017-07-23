@@ -105,7 +105,7 @@ This dictionary of multipliers is used as a scaling rule. To set the rule, add `
 
 **2.3 Scale an original value**
 
-Add `.scaled` to a value of `Int`, `Float`, `Double` of `CGFloat` type: `20.scaled`. As the result, a value in `CGFloat`is returned.
+Add `.scaled` to a value of `Int`, `Float`, `Double` or `CGFloat` type: `20.scaled`. The result is scaled original value of the same type. Call `.cgFloat` to convert it into `CGFloat` for further using.
 
 To keep pixel-perfect, the result is rounded by default. If you don't want the result to be rounded, say it be setting the rule: `.scalingRule(rounding: false)`
 
