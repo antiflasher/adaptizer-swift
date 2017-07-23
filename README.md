@@ -1,9 +1,9 @@
-# Adapter.swift
+# Adaptizer.swift
 Class helping to build flexible, adaptive iOS interfaces with extremely easy API:
 
 <br>
 
-<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_main%402x.png" title="Adapter">
+<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_main%402x.png" title="Adaptizer">
 
 Why? Sometimes, UI designers need to adjust size or text to a particular screen size, like the adaptive design on the web.
 
@@ -37,7 +37,7 @@ All screen width in points:
 // w1366 >  wR          iPad
 ```
 
-Adapter supports three ways to refer a particular screen size:
+Adaptizer supports three ways to refer a particular screen size:
 1. Exact screen width in points: `w320`, `w375`, `w414` and so on, regardless of the device type
 2. SizeClass + Device type: `wC.phone`, `wR.pad`
 3. SizeClass, regardless of the device type: `wC.all`, `wR.all`
@@ -56,7 +56,7 @@ Drag `Adapter.swift` into your project.
 
 ### 1. Scaled value from the list of explicit break points
 
-You can give a list of exact values for various screen width, and Adapter returns one for the current screen.
+You can give a list of exact values for various screen width, and Adaptizer returns one for the current screen.
 
 <br>
 
@@ -115,5 +115,5 @@ To keep pixel-perfect, the result is rounded by default. If you don't want the r
 
 Mikhail Rubanov and Ruslan Shevchuk for consultations and ideas.
 
-<a href="https://evilmartians.com/?utm_source=adapter">
+<a href="https://evilmartians.com/?utm_source=adaptizer">
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54"></a>
