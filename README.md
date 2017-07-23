@@ -18,8 +18,8 @@ All screen width in points:
 // w375  >  wC  iPhone  iPad
 // w414  >  wC  iPhone
 // w438  >  wC          iPad
-// w507  >  wC          iPad
 // w504  >  wC          iPad
+// w507  >  wC          iPad
 // w551  >  wC          iPad
 // w568  >  wC  iPhone
 // w639  >  wC          iPad
