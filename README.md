@@ -9,7 +9,7 @@ Why? Sometimes, UI designers need to adjust size or text to a particular screen 
 
 The big picture of various screen sizes:
 
-<img width="758" height="575" src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_sizes%402x.png" title="Screen Sizes">
+<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_sizes2%402x.png" title="Screen Sizes">
 
 All screen width in points:
 
@@ -19,6 +19,8 @@ All screen width in points:
 // w414  >  wC  iPhone
 // w438  >  wC          iPad
 // w507  >  wC          iPad
+// w504  >  wC          iPad
+// w551  >  wC          iPad
 // w568  >  wC  iPhone
 // w639  >  wC          iPad
 // w667  >  wC  iPhone
@@ -27,8 +29,11 @@ All screen width in points:
 // w694  >  wR          iPad
 // w736  >  wR  iPhone
 // w768  >  wR          iPad
+// w782  >  wR          iPad
+// w834  >  wR          iPad
 // w981  >  wR          iPad
 // w1024 >  wR          iPad
+// w1112 >  wR          iPad
 // w1366 >  wR          iPad
 ```
 
