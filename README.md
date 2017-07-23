@@ -9,7 +9,7 @@ Why? Sometimes, UI designers need to adjust size or text to a particular screen 
 
 The big picture of various screen sizes:
 
-<img src="https://raw.githubusercontent.com/antiflasher/adaptizer-swift/blob/master/illustration_sizes2%402x.png" title="Screen Sizes">
+<img src="https://github.com/antiflasher/adaptizer-swift/blob/master/illustration_sizes2@2x.png?raw=true" title="Screen Sizes">
 
 All screen width in points:
 
