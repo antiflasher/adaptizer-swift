@@ -78,7 +78,7 @@ If you haven't set the default value in your dictionary, well the first dictiona
 
 Simply add `.scaled` to a dictionary: `[w320.default: 80, w375: 100, w414: 120].scaled`.
 
-Adaptizer returns one of the value provided in the dictionary in the very same type. If you need a `CGFloat` call `.cgFloat` for more convinience type convertation. 
+Adaptizer returns one of the values provided in the dictionary in the very same type. If you need a `CGFloat` call `.cgFloat` for more convenience type conversion. 
 
 Conflicts are solved towards more specific instruction. F.x. you set `[w320: 80, wC.phone: 100, wC.all: 120]`. For screen width of 320 points, all three instructions applicable, but `w320` is the only one exact, so it is used, the others are ignored. For screen width of 375 points on an iPhone, second and third instructions are applicable, but `wC.phone` is more specific instruction, so it is used.
 
