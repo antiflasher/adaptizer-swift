@@ -45,8 +45,8 @@ All screen width in points:
 
 Adaptizer supports three ways to refer a particular screen size:
 1. Exact screen width in points: `w320`, `w375`, `w414` and so on, regardless of the device type
-2. SizeClass + Device type: `wC.phone`, `wR.pad`
-3. SizeClass, regardless of the device type: `wC.all`, `wR.all`
+2. Size class + Device type: `wC.phone`, `wR.pad`
+3. Size class, regardless of the device type: `wC.all`, `wR.all`
 
 <br>
 
