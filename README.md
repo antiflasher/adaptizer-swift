@@ -3,7 +3,7 @@ Class helping to build flexible, adaptive iOS interfaces with extremely easy API
 
 <br>
 
-<img src="https://github.com/antiflasher/adaptizer-swift/blob/master/illustration_main@2x.png?raw=true" title="Adaptizer">
+<img src="https://raw.githubusercontent.com/antiflasher/adaptizer-swift/master/illustration_main2%402x.png" title="Adaptizer">
 
 Why? Sometimes, UI designers need to adjust size or text to a particular screen size, like the adaptive design on the web.
 
