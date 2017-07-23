@@ -11,9 +11,9 @@ import UIKit
 
 
 // MARK: USAGE
-// 
+//
 // # Scaling through a list of explicit break points
-// 1. Form a dictionary where 
+// 1. Form a dictionary where
 //    key is in screenIdentifier format (see bellow)
 //    value is in any fomat. Only that all values should be in one format
 //    values should store EXACT what you want to get on different screens sizes
@@ -65,9 +65,8 @@ import UIKit
 // You can use only those you care about.
 // F.x [w375 : 100, w1366.default : 200, wR.pad : 300].
 // For screen sizes you haven't set value .default value will be used.
-// If you haven't set .default value, well the first dictionary value will be used,
-// it's almost arbitrary value, you know :)
-// 
+// If you haven't set .default value, well the first dictionary value will be used.
+//
 // Conflicts:
 // Are solved towards more specified identifier.
 // F.x [w320 : 100, wC.iPhone : 120, wC.all : 140] will be soleveed this way:
@@ -249,7 +248,7 @@ fileprivate class Adaptizer {
     
     fileprivate static var scalingRule : [ScreenIdentifier : Double]?
     fileprivate static var rounding : Bool = true
-
+    
     
     
     fileprivate static func scale(_ originalValue: Double) -> Double {
@@ -270,32 +269,48 @@ fileprivate class Adaptizer {
     fileprivate static func valueForScreenWidth<T>(_ rule:[ScreenIdentifier : T]) -> T {
         
         // Device parameters
-        let isLandscape = UIDevice.current.orientation.isLandscape
         let screenWidth = UIScreen.main.bounds.width
         let sizeClass = UIScreen.main.traitCollection.horizontalSizeClass
         let isPhone = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad ? false : true
         
         // Find default value
-        var defaultValue : T = rule.first!.value
-        for (key,value) in rule {
-            if key == ScreenIdentifier("wAny") { defaultValue = value ; break }
-            else if key.isDefault { defaultValue = value ; break }
-        }
+        let defaultValue : T = findDefaultValue(rule)
         
+        // Find instructions fit to the current device
         let sizeClassValue : T? = sift(sizeClass:sizeClass, rule:rule)
         let sizeClassDeviceValue : T? = sift(sizeClass:sizeClass, isPhone:isPhone, rule:rule)
-        let widthOrientationValue : T? = sift(screenWidth:screenWidth, isLandscape:isLandscape, rule:rule)
+        let widthOrientationValue : T? = sift(screenWidth:screenWidth, rule:rule)
         
-        if sizeClassValue != nil {
-            return sizeClassValue!
+        // Choose one of the instruction
+        if widthOrientationValue != nil {
+            return widthOrientationValue!
+            
         } else if sizeClassDeviceValue != nil {
             return sizeClassDeviceValue!
-        } else if widthOrientationValue != nil {
-            return widthOrientationValue!
+            
+        } else if sizeClassValue != nil {
+            return sizeClassValue!
+            
         } else {
             return defaultValue
         }
+    }
+    
+    
+    
+    // Finding the default value
+    fileprivate static func findDefaultValue<T>(_ rule:[ScreenIdentifier : T]) -> T {
         
+        var defaultValue : T = rule.first!.value
+        if rule[ScreenIdentifier("wAny")] != nil {
+            defaultValue = rule[ScreenIdentifier("wAny")]!
+        } else {
+            for (key,value) in rule {
+                if key == ScreenIdentifier("wAny") { defaultValue = value ; break }
+                else if key.isDefault { defaultValue = value ; break }
+            }
+        }
+        return defaultValue
     }
     
     
@@ -344,9 +359,9 @@ fileprivate class Adaptizer {
     }
     
     
-
+    
     // Searching if there is w3_5, w4_0, w4_7, w5_0, w7_9, w9_7, w10_5 or w12_9 in the rule provided
-    fileprivate static func sift<T>(screenWidth:CGFloat, isLandscape:Bool, rule:[ScreenIdentifier : T]) -> T? {
+    fileprivate static func sift<T>(screenWidth:CGFloat, rule:[ScreenIdentifier : T]) -> T? {
         
         var targetValue : T?
         
@@ -356,19 +371,41 @@ fileprivate class Adaptizer {
             targetValue = value
         } else if screenWidth >= 375 && screenWidth < 414, let value = rule[ScreenIdentifier("w375")] {
             targetValue = value
-        } else if screenWidth >= 414 && screenWidth < 568, let value = rule[ScreenIdentifier("w414")] {
+        } else if screenWidth >= 414 && screenWidth < 438, let value = rule[ScreenIdentifier("w414")] {
             targetValue = value
-        } else if screenWidth >= 568 && screenWidth < 667, let value = rule[ScreenIdentifier("w568")] {
+        } else if screenWidth >= 438 && screenWidth < 504, let value = rule[ScreenIdentifier("w438")] {
             targetValue = value
-        } else if screenWidth >= 667 && screenWidth < 736, let value = rule[ScreenIdentifier("w667")] {
+        } else if screenWidth >= 504 && screenWidth < 507, let value = rule[ScreenIdentifier("w504")] {
+            targetValue = value
+        } else if screenWidth >= 507 && screenWidth < 551, let value = rule[ScreenIdentifier("w507")] {
+            targetValue = value
+        } else if screenWidth >= 551 && screenWidth < 568, let value = rule[ScreenIdentifier("w551")] {
+            targetValue = value
+        } else if screenWidth >= 568 && screenWidth < 639, let value = rule[ScreenIdentifier("w568")] {
+            targetValue = value
+        } else if screenWidth >= 639 && screenWidth < 667, let value = rule[ScreenIdentifier("w639")] {
+            targetValue = value
+        } else if screenWidth >= 667 && screenWidth < 678, let value = rule[ScreenIdentifier("w667")] {
+            targetValue = value
+        } else if screenWidth >= 678 && screenWidth < 694, let value = rule[ScreenIdentifier("w678")] {
+            targetValue = value
+        } else if screenWidth >= 694 && screenWidth < 736, let value = rule[ScreenIdentifier("w694")] {
             targetValue = value
         } else if screenWidth >= 736 && screenWidth < 768, let value = rule[ScreenIdentifier("w736")] {
             targetValue = value
-        } else if screenWidth >= 768 && screenWidth < 1024, let value = rule[ScreenIdentifier("w768")] {
+        } else if screenWidth >= 768 && screenWidth < 782, let value = rule[ScreenIdentifier("w768")] {
             targetValue = value
-        } else if screenWidth >= 1024 && screenWidth < 1366, let value = rule[ScreenIdentifier("w1024")] {
+        } else if screenWidth >= 782 && screenWidth < 834, let value = rule[ScreenIdentifier("w782")] {
             targetValue = value
-        } else if let value = rule[ScreenIdentifier("w1366")] {
+        } else if screenWidth >= 834 && screenWidth < 981, let value = rule[ScreenIdentifier("w834")] {
+            targetValue = value
+        } else if screenWidth >= 981 && screenWidth < 1024, let value = rule[ScreenIdentifier("w981")] {
+            targetValue = value
+        } else if screenWidth >= 1024 && screenWidth < 1112, let value = rule[ScreenIdentifier("w1024")] {
+            targetValue = value
+        } else if screenWidth >= 1112 && screenWidth < 1366, let value = rule[ScreenIdentifier("w1112")] {
+            targetValue = value
+        } else if screenWidth >= 1366, let value = rule[ScreenIdentifier("w1366")] {
             targetValue = value
         } else {
             targetValue = nil
