@@ -186,20 +186,29 @@ extension Dictionary where Key == ScreenIdentifier {
 
 // Calling scaled metrics.
 // You can use Double, Float, CGFloat and Int.
-// 20.scaled = 20.0.scaled = CGFloat(20).scaled 
-// Since Adaptizer is created for interface tweaking, .scaled returns CGFloat!
+// 20.scaled / 20.0.scaled / CGFloat(20).scaled
+// Adaptizer returns the result value in the original value type
+// Call .cgFloat right after .scaled for more convenience conversion
 //
 extension Double {
-    var scaled : CGFloat {
-        get { return CGFloat(Adaptizer.scale(Double(self))) }
+    var scaled : Double {
+        get { return Adaptizer.scale(Double(self)) }
+    }
+    
+    var cgFloat : CGFloat {
+        return CGFloat(self)
     }
 }
 
 
 
 extension Float {
-    var scaled : CGFloat {
-        get { return CGFloat(Adaptizer.scale(Double(self))) }
+    var scaled : Float {
+        get { return Float(Adaptizer.scale(Double(self))) }
+    }
+    
+    var cgFloat : CGFloat {
+        return CGFloat(self)
     }
 }
 
@@ -214,8 +223,12 @@ extension CGFloat {
 
 
 extension Int {
-    var scaled : CGFloat {
-        get { return CGFloat(Adaptizer.scale(Double(self))) }
+    var scaled : Int {
+        get { return Int(Adaptizer.scale(Double(self))) }
+    }
+    
+    var cgFloat : CGFloat {
+        return CGFloat(self)
     }
 }
 
@@ -364,4 +377,3 @@ fileprivate class Adaptizer {
         return targetValue
     }
 }
-
