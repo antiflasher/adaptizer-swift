@@ -44,7 +44,9 @@ import UIKit
 // w375  >  wC  iPhone  iPad
 // w414  >  wC  iPhone
 // w438  >  wC          iPad
+// w504  >  wC          iPad
 // w507  >  wC          iPad
+// w551  >  wC          iPad
 // w568  >  wC  iPhone
 // w639  >  wC          iPad
 // w667  >  wC  iPhone
@@ -53,8 +55,11 @@ import UIKit
 // w694  >  wR          iPad
 // w736  >  wR  iPhone
 // w768  >  wR          iPad
+// w782  >  wR          iPad
+// w834  >  wR          iPad
 // w981  >  wR          iPad
 // w1024 >  wR          iPad
+// w1112 >  wR          iPad
 // w1366 >  wR          iPad
 
 // You can use only those you care about.
@@ -81,16 +86,21 @@ let w736        = ScreenIdentifier("w736")  // iPhone 6+, 7+ in Landscape
 
 // iPads
 // w320                                     // iPad mini, iPad in Port/Land split view 1/3
-// w375                                     // iPad Pro in Port/Land split view 1/3
+// w375                                     // iPad Pro 12.9" in Port/Land split view 1/3
 let w438        = ScreenIdentifier("w438")  // iPad mini, iPad in Portrait split view 2/3
+let w504        = ScreenIdentifier("w504")  // iPad Pro 10.5" in Portrait split view 2/3
 let w507        = ScreenIdentifier("w507")  // iPad mini, iPad in Landscape split view 1/2
-let w639        = ScreenIdentifier("w639")  // iPad Pro in Portret split view 2/3
-let w678        = ScreenIdentifier("w678")  // iPad Pro in Landscape split view 1/2
+let w551        = ScreenIdentifier("w551")  // iPad Pro 10.5" in Landscape split view 1/2
+let w639        = ScreenIdentifier("w639")  // iPad Pro 12.9"in Portrait split view 2/3
+let w678        = ScreenIdentifier("w678")  // iPad Pro 12.9"in Landscape split view 1/2
 let w694        = ScreenIdentifier("w694")  // iPad mini, iPad in Landscape split view 2/3
 let w768        = ScreenIdentifier("w768")  // iPad mini, iPad in Portrait full screen
-let w981        = ScreenIdentifier("w981")  // iPad Pro in Landscape split view 2/3
-let w1024       = ScreenIdentifier("w1024") // iPad Pro in Portrait or iPad in Landscape full screen
-let w1366       = ScreenIdentifier("w1366") // iPad Pro in Landscape full screen
+let w782        = ScreenIdentifier("w782")  // iPad Pro 10.5" in Landscape split view 3/4
+let w834        = ScreenIdentifier("w834")  // iPad Pro 10.5" in Portrait full screen
+let w981        = ScreenIdentifier("w981")  // iPad Pro 12.9" in Landscape split view 3/4
+let w1024       = ScreenIdentifier("w1024") // iPad Pro 12.9"in Portrait or iPad, iPad mini in Landscape full screen
+let w1112       = ScreenIdentifier("w1112") // iPad Pro 10.5" in Landscape full screen
+let w1366       = ScreenIdentifier("w1366") // iPad Pro 12.9"in Landscape full screen
 
 // Compact size class
 struct wC {
