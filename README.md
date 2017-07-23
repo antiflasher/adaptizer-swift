@@ -3,13 +3,13 @@ Class helping to build flexible, adaptive iOS interfaces with extremely easy API
 
 <br>
 
-<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_main%402x.png" title="Adaptizer">
+<img src="https://github.com/antiflasher/adaptizer-swift/blob/master/illustration_main@2x.png?raw=true" title="Adaptizer">
 
 Why? Sometimes, UI designers need to adjust size or text to a particular screen size, like the adaptive design on the web.
 
 The big picture of various screen sizes:
 
-<img src="https://raw.githubusercontent.com/antiflasher/Adapter/master/illustration_sizes2%402x.png" title="Screen Sizes">
+<img src="https://raw.githubusercontent.com/antiflasher/adaptizer-swift/blob/master/illustration_sizes2%402x.png" title="Screen Sizes">
 
 All screen width in points:
 
@@ -48,7 +48,7 @@ Adaptizer supports three ways to refer a particular screen size:
 
 ### Manual so far
 
-Drag `Adapter.swift` into your project.
+Drag `Adaptizer.swift` into your project.
 
 <br>
 
