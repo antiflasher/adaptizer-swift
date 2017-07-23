@@ -70,7 +70,7 @@ Use `.default`to set a default value for screen widths you haven't specified: `[
 
 Also, you can use `wAny` to set a default value: `[wAny: 50, w414: 100]`.
 
-If you haven't set the default value in your dictionary, well the first dictionary value is used, which is almost arbitrary value, you know :)
+If you haven't set the default value in your dictionary, the first dictionary value is used.
 
 <br>
 
