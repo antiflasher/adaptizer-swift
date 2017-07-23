@@ -46,6 +46,10 @@ Adapter supports three ways to refer a particular screen size:
 
 ## Installation
 
+### Manual so far
+
+Drag Adapter.swift into your project.
+
 <br>
 
 ## Usage
