@@ -1,5 +1,5 @@
 //
-//  Adapter
+//  Adaptizer
 //
 //  Created by Anton on 15/07/2017.
 //  Copyright © 2017 Anton Lovchikov. All rights reserved.
@@ -155,7 +155,7 @@ struct ScreenIdentifier : Hashable {
 extension Dictionary where Key == ScreenIdentifier {
     var scaled : Dictionary.Value {
         get {
-            let value : Value = Adapter.valueForScreenWidth(self)
+            let value : Value = Adaptizer.valueForScreenWidth(self)
             return value
         }
     }
@@ -174,12 +174,12 @@ extension Dictionary where Key == ScreenIdentifier {
     func scalingRule(rounding: Bool = true) {
         if let dictionary = self as? [ScreenIdentifier : Double] {
             if dictionary.values.count > 0 {
-                Adapter.setScalingRule(dictionary, withRounding:rounding)
+                Adaptizer.setScalingRule(dictionary, withRounding:rounding)
             } else {
-                print("Adapter can't set the scale rule: dictionary shouldn't be empty. Original value is used for all screens")
+                print("Adaptizer can't set the scale rule: dictionary shouldn't be empty. Original value is used for all screens")
             }
         } else {
-            print("Adapter can't set the scale rule. Expected dictionary format is [String : Double]. Provided dictionary format is [\(Dictionary.Key.self) : \(Dictionary.Value.self)]. Original value will be used for all screens")
+            print("Adaptizer can't set the scale rule. Expected dictionary format is [String : Double]. Provided dictionary format is [\(Dictionary.Key.self) : \(Dictionary.Value.self)]. Original value will be used for all screens")
         }
     }
 }
@@ -187,11 +187,11 @@ extension Dictionary where Key == ScreenIdentifier {
 // Calling scaled metrics.
 // You can use Double, Float, CGFloat and Int.
 // 20.scaled = 20.0.scaled = CGFloat(20).scaled 
-// Since Adapter is created for interface tweaking, .scaled returns CGFloat!
+// Since Adaptizer is created for interface tweaking, .scaled returns CGFloat!
 //
 extension Double {
     var scaled : CGFloat {
-        get { return CGFloat(Adapter.scale(Double(self))) }
+        get { return CGFloat(Adaptizer.scale(Double(self))) }
     }
 }
 
@@ -199,7 +199,7 @@ extension Double {
 
 extension Float {
     var scaled : CGFloat {
-        get { return CGFloat(Adapter.scale(Double(self))) }
+        get { return CGFloat(Adaptizer.scale(Double(self))) }
     }
 }
 
@@ -207,7 +207,7 @@ extension Float {
 
 extension CGFloat {
     var scaled : CGFloat {
-        get { return CGFloat(Adapter.scale(Double(self))) }
+        get { return CGFloat(Adaptizer.scale(Double(self))) }
     }
 }
 
@@ -215,7 +215,7 @@ extension CGFloat {
 
 extension Int {
     var scaled : CGFloat {
-        get { return CGFloat(Adapter.scale(Double(self))) }
+        get { return CGFloat(Adaptizer.scale(Double(self))) }
     }
 }
 
@@ -225,7 +225,7 @@ extension Int {
 
 // MARK: PRIVATE
 //
-fileprivate class Adapter {
+fileprivate class Adaptizer {
     
     
     
@@ -247,7 +247,7 @@ fileprivate class Adapter {
             let result = rounding ? round(semiresult) : semiresult
             return result
         } else {
-            print("Adapter scale rule hasn't been set. Original value is used for all screens")
+            print("Adaptizer scale rule hasn't been set. Original value is used for all screens")
             return originalValue
         }
     }
